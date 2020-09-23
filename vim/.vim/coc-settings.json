@@ -1,0 +1,30 @@
+{
+    "python.jediEnabled": false,
+    "python.formatting.yapfPath": "~/venv/sys/bin/yapf",
+    "python.linting.flake8Path": "~/venv/sys/bin/flake8",
+    "python.linting.pylintPath": "~/venv/sys/bin/pylint",
+    "python.venvPath": "~/venv/",
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
