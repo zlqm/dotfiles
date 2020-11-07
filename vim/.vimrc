@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+filetype plugin on
 set encoding=utf-8
 syntax on
 let python_highlight_all=1
@@ -9,6 +10,8 @@ let python_highlight_all=1
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'dyng/ctrlsf.vim'
+Plug 'vimwiki/vimwiki'
 Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/indentpython.vim'
 Plug 'Yggdroot/indentLine'
@@ -16,6 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'rakr/vim-one'
 " Make sure you use single quotes
 " Initialize plugin system
 call plug#end()
@@ -64,10 +68,12 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 
+au BufNewFile,BufRead *.js, *.html, *.css, *.cpp, *.c
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 
+    \ set expandtab |
+    \ set fileformat=unix
 
 "Flagging Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -83,3 +89,16 @@ imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 "
 """"""""""""""""""""
 """"""""""""""""""""
+let g:airline_theme='one'
+colorscheme one
+" set background=dark " for the dark version
+set background=light " for the light version
+"
+let mapleader = "\<space>"
+
+""""""""""""""
+"""""""""""""""
+nnoremap <Leader>f :CtrlSF<Space>
+map <s-j> <c-j>p
+map <s-k> <c-k>p 
+let g:ctrlsf_default_view_mode = 'compact'
