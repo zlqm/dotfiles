@@ -1,8 +1,8 @@
 {
     "python.jediEnabled": false,
-    "python.formatting.yapfPath": "~/venv/sys/bin/yapf",
-    "python.linting.flake8Path": "~/venv/sys/bin/flake8",
-    "python.linting.pylintPath": "~/venv/sys/bin/pylint",
+    "python.formatting.yapfPath": "yapf",
+    "python.linting.flake8Path": "flake8",
+    "python.linting.pylintPath": "pylint",
     "python.venvPath": "~/venv/",
     "languageserver": {
         "ccls": {

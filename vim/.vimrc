@@ -1,3 +1,4 @@
+set spell
 set nocompatible
 filetype off
 filetype plugin on
@@ -11,17 +12,14 @@ let python_highlight_all=1
 call plug#begin('~/.vim/plugged')
 
 Plug 'dyng/ctrlsf.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'chrisbra/csv.vim'
 Plug 'tmhedberg/SimpylFold'
-" Plug 'vim-scripts/indentpython.vim'
+Plug 'preservim/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-Plug 'rakr/vim-one'
-" Make sure you use single quotes
-" Initialize plugin system
 call plug#end()
 filetype plugin indent on
 
@@ -89,8 +87,7 @@ imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 "
 """"""""""""""""""""
 """"""""""""""""""""
-let g:airline_theme='one'
-colorscheme one
+colorscheme zellner
 " set background=dark " for the dark version
 set background=light " for the light version
 "
@@ -102,3 +99,21 @@ nnoremap <Leader>f :CtrlSF<Space>
 map <s-j> <c-j>p
 map <s-k> <c-k>p 
 let g:ctrlsf_default_view_mode = 'compact'
+
+""""
+""""
+" 关闭NERDTree快捷键
+map <leader>t :NERDTreeToggle<CR>
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" 设置宽度
+let NERDTreeWinSize=31
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1
