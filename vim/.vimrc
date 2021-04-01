@@ -22,6 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'zlqm/showDoc', { 'rtp': 'plugins/vim' }
 Plug 'dense-analysis/ale'
+Plug 'fatih/vim-go'
 call plug#end()
 filetype plugin indent on
 
